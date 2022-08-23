@@ -61,13 +61,14 @@ You will be running your tests in one terminal and debugging in the other. As yo
 Edit the `ReadMe` file with your answers to the questions below.
 
 1. In your own words, define closure (1-2 sentences).
+  Closure occurs whenever a function references variables an the outer scope.
 2. Study the following code, then answer the questions below.
 
 ```js
 function personalDice(name){
   return function(){
       // generate random number between 1 and 6
-    const newRoll = Math.floor(Math.random() * 6);
+    const newRoll = Math.floor(Math.random() * );
     console.log(`${name} rolled a ${newRoll}`)
   }
 }
@@ -77,14 +78,16 @@ const dansRoll = personalDice("Dan");
 const zoesRoll = personalDice("Zoe");
 
 
-dansRoll();
-dansRoll();
+console.log(dansRoll());
+console.log(dansRoll());
 ```
 
 a. Where is closure used in this code? How can you tell?
+  Closure occurs at the return statement where a function is created within a function.
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+  His name will remain the same; his roll will change.
 c. What is the lexical scope of `newRoll`? 
-
+  newRoll can only be referenced within the anonymous function() at the return statement.
 
 ### Task 3 - Stretch Goals
 
